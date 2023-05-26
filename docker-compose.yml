@@ -1,0 +1,15 @@
+version: 3
+services:
+  dev-client:
+    build: ./docker.dev.client
+    ports:
+     - "4200:4200"
+    volumes:
+     - ./client/src:/client/src
+  dev-server:
+    build: ./docker.dev.server
+    ports:
+     - "80:8080"
+    volumes:
+     - ./server.js:/app/server.js
+  prod:
